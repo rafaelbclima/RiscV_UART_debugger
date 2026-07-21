@@ -1,3 +1,4 @@
+
 # RiscV_UART_debugger
 Framework para debug de um processador RiscV, implementado em System Verilog, via UART
 
@@ -21,6 +22,8 @@ Framework para debug de um processador RiscV, implementado em System Verilog, vi
 - Rode o comando para gerar o .exe na pasta \dist: "pyinstaller --onefile --console --name DebugMonitor debug_monitor.py"
 - Teste o executável clicando no arquivo "DebugMonitor.exe"
 - Se certifique que o windows defender não bloqueou o .exe
+<img width="543" height="244" alt="1" src="https://github.com/user-attachments/assets/5faabd33-b5bc-4144-96ea-0ea43a5e907a" />
+<img width="894" height="643" alt="2" src="https://github.com/user-attachments/assets/7a101082-cfdb-46d2-9b66-2e65747db88a" />
 
 ----------------------------------------------------------------------------------
 -- Para inclui o pacote de debug no HDL do seu processador RiscV                --

@@ -33,6 +33,8 @@ Framework para debug de um processador RiscV, implementado em System Verilog, vi
 ----------------------------------------------------------------------------------
 -- Para utilizar a interface UART no HDL do seu processador RiscV               --
 ----------------------------------------------------------------------------------
+- Conecte um cabo conversor UART-USB na porta GPIO_0[0] da placa Altera DE2
+  <img width="1344" height="472" alt="montagem" src="https://github.com/user-attachments/assets/c9c7e044-4d16-496c-816f-8c0b38d3bd09" />
 - Instancie o módulo debug_dump_ctrl
 - Exemplo no quartus II
 	
@@ -75,18 +77,18 @@ debug_dump_ctrl #(
 	// saida UART fisica
 	.uart_txd	(GPIO_0[0])
 );
-
-// LOGICS
-	logic [31:0] registers [31:0];
-// FIOS
-wire [31:0] w_PCp4, w_ImmPC, w_PCn, w_rd1SrcA, w_rd2, w_SrcB, w_ULAResult, w_PC, w_Inst, w_Imm, w_RData, w_MImm;
+// Barramentos
+logic [31:0] registers [31:0];
+wire [31:0] w_ULAResult, w_PC, w_Inst;
 wire [2:0] w_ULAControl;
-wire [7:0] w_Wd3, w_muxImm1, w_muxImm2, w_muxImm3, w_DataOut, w_DataIn, w_RegData;
 wire [1:0] w_ImmSrc;
-wire w_ULASrc, w_RegWrite, w_ResultSrc, w_MemWrite, w_Branch, w_Zero, w_PCSrc;
+wire w_ULASrc, w_RegWrite, w_ResultSrc, w_MemWrite, w_Branch;
+
+// Código do processador RiscV:
+//..
 ```
 ----------------------------------------------------------------------------------
--- Formato do pacote utilizado pela interface UART                                               --
+-- Formato do pacote utilizado pela interface UART                              --
 ----------------------------------------------------------------------------------
 Formato do pacote (176 bytes, big-endian):
 

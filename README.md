@@ -3,30 +3,7 @@
 Framework para debug de um processador RiscV, implementado em System Verilog, via UART
 
 ----------------------------------------------------------------------------------
--- Para modificar o código do PC                                                --
-----------------------------------------------------------------------------------
-- Instalar o python
-	- python.org/downloads
-	- Na primeira tela do instalador, marque a caixinha "Add python.exe to PATH" 
-	- Abra o prompt de comando do windows
-	- Teste a versão do python com o comando: "python --version"
-- Instalar "pip install pyserial"
-- Instalar "pip install windows-curses"
-- Editar o debug_monitor.py no bloco de notas
-- Teste o código rodando o prompt de comando do Windows: "python debug_monitor.py"
-
-----------------------------------------------------------------------------------
--- Para gerar o .exe e rodar no PC                                              --
-----------------------------------------------------------------------------------
-- Instale "pip install pyserial windows-curses pyinstaller"
-- Rode o comando para gerar o .exe na pasta \dist: "pyinstaller --onefile --console --name DebugMonitor debug_monitor.py"
-- Teste o executável clicando no arquivo "DebugMonitor.exe"
-- Se certifique que o windows defender não bloqueou o .exe
-<img width="543" height="244" alt="1" src="https://github.com/user-attachments/assets/5faabd33-b5bc-4144-96ea-0ea43a5e907a" />
-<img width="894" height="643" alt="2" src="https://github.com/user-attachments/assets/7a101082-cfdb-46d2-9b66-2e65747db88a" />
-
-----------------------------------------------------------------------------------
--- Para inclui o pacote de debug no HDL do seu processador RiscV                --
+-- Para incluir o pacote de debug no HDL do seu processador RiscV                --
 ----------------------------------------------------------------------------------
 - Inclua o arquivo utilidades.sv no seu projeto
 
@@ -115,6 +92,35 @@ Empacotamento do CONTROL (16 bits, MSB->LSB):
 |bits 7:6  | ResultSrc[1:0]|
 |bit 5     | Branch|
 |bits 4:0  | reservado|
+
+----------------------------------------------------------------------------------
+-- Para rodar o DebugMonitor.exe no PC                                          --
+----------------------------------------------------------------------------------
+- Clique no arquivo "DebugMonitor.exe"
+- Se certifique que o windows defender não bloqueou o .exe
+<img width="543" height="244" alt="1" src="https://github.com/user-attachments/assets/5faabd33-b5bc-4144-96ea-0ea43a5e907a" />
+<img width="894" height="643" alt="2" src="https://github.com/user-attachments/assets/7a101082-cfdb-46d2-9b66-2e65747db88a" />
+
+----------------------------------------------------------------------------------
+-- Para modificar o código do PC                                                --
+----------------------------------------------------------------------------------
+- Instalar o python
+	- python.org/downloads
+	- Na primeira tela do instalador, marque a caixinha "Add python.exe to PATH" 
+	- Abra o prompt de comando do windows
+	- Teste a versão do python com o comando: "python --version"
+- Instalar "pip install pyserial"
+- Instalar "pip install windows-curses"
+- Editar o debug_monitor.py no bloco de notas
+- Teste o código rodando o prompt de comando do Windows: "python debug_monitor.py"
+
+----------------------------------------------------------------------------------
+-- Para gerar novamente o .exe no caso de modificações                          --
+----------------------------------------------------------------------------------
+- Instale "pip install pyserial windows-curses pyinstaller"
+- Rode o comando para gerar o .exe na pasta \dist: "pyinstaller --onefile --console --name DebugMonitor debug_monitor.py"
+- Teste o executável clicando no arquivo "DebugMonitor.exe"
+- Se certifique que o windows defender não bloqueou o .exe
 
 ----------------------------------------------------------------------------------
 -- Para utilizar a interface do LCD da placa Altera DE2                                               --

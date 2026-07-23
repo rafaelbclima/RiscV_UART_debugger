@@ -89,24 +89,30 @@ wire w_ULASrc, w_RegWrite, w_ResultSrc, w_MemWrite, w_Branch, w_Zero, w_PCSrc;
 -- Formato do pacote utilizado pela interface UART                                               --
 ----------------------------------------------------------------------------------
 Formato do pacote (176 bytes, big-endian):
-    [0]        HEADER      = 0xAA
-    [1:5]      PC          (32 bits)
-    [5:9]      INSTRUCTION (32 bits)
-    [9:13]     ALU_RESULT  (32 bits)
-    [13:141]   REGFILE     (32 registradores x31..x0, 32 bits cada)
-    [141:173]  PROBES      (8 sondas genericas, 32 bits cada)
-    [173:175]  CONTROL     (16 bits, ver empacotamento abaixo)
-    [175]      CHECKSUM    (XOR dos bytes 1..175)
+
+| Bits | Nome da Variável | Comentário |
+| :--- | :---: | ---: |
+|[0]|        HEADER      |= 0xAA|
+|[1:5]|      PC          |(32 bits)|
+|[5:9]|      INSTRUCTION |(32 bits)|
+|[9:13]|     ALU_RESULT  |(32 bits)|
+|[13:141]|   REGFILE     |(32 registradores x31..x0, 32 bits cada)|
+|[141:173]|  PROBES      |(8 sondas genericas, 32 bits cada)|
+|[173:175]|  CONTROL     |(16 bits, ver empacotamento abaixo)|
+|[175]|      CHECKSUM    |(XOR dos bytes 1..175)|
 
 Empacotamento do CONTROL (16 bits, MSB->LSB):
-    bit 15    : RegWrite
-    bits 14:13: ImmSrc[1:0]
-    bit 12    : ULASrc
-    bits 11:9 : ULAControl[2:0]
-    bit 8     : MemWrite
-    bits 7:6  : ResultSrc[1:0]
-    bit 5     : Branch
-    bits 4:0  : reservado
+
+| Bits | Nome da Variável |
+| :--- | ---: |
+|bit 15    | RegWrite|
+|bits 14:13| ImmSrc[1:0]|
+|bit 12    | ULASrc|
+|bits 11:9 | ULAControl[2:0]|
+|bit 8     | MemWrite|
+|bits 7:6  | ResultSrc[1:0]|
+|bit 5     | Branch|
+|bits 4:0  | reservado|
 
 ----------------------------------------------------------------------------------
 -- Para utilizar a interface do LCD da placa Altera DE2                                               --

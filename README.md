@@ -3,12 +3,12 @@
 Framework para debug de um processador RiscV, implementado em System Verilog, via UART
 
 ----------------------------------------------------------------------------------
--- Para incluir o pacote de debug no HDL do seu processador RiscV                --
+-- Para incluir o pacote de debug no projeto do seu processador RiscV                --
 ----------------------------------------------------------------------------------
 - Inclua o arquivo utilidades.sv no seu projeto
 
 ----------------------------------------------------------------------------------
--- Para utilizar a interface UART no HDL do seu processador RiscV               --
+-- Para utilizar a interface UART no projeto do seu processador RiscV               --
 ----------------------------------------------------------------------------------
 - Conecte um cabo conversor UART-USB na porta GPIO_0[0] da placa Altera DE2
   <img width="1344" height="472" alt="montagem" src="https://github.com/user-attachments/assets/c9c7e044-4d16-496c-816f-8c0b38d3bd09" />

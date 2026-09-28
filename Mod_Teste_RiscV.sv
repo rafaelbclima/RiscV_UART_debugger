@@ -1,5 +1,5 @@
 `default_nettype none //Comando para desabilitar declaração automática de wires
-module Mod_Teste (
+module Mod_Teste_RiscV (
 	//Clocks
 	input CLOCK_27, CLOCK_50,
 	//Chaves e Botoes

@@ -78,10 +78,10 @@ module Mod_Teste_RiscV (
 
 // Barramentos
 	logic [31:0] registers [31:0];
-   wire [31:0] w_ULAResult, w_PC, w_Inst;
+    wire [31:0] w_ULAResult, w_PC, w_Inst;
 	wire [2:0] w_ULAControl;
 	wire [1:0] w_ImmSrc;
-	wire w_ULASrc, w_RegWrite, w_ResultSrc, w_MemWrite, w_Branch;
+	wire w_ULASrc, w_RegWrite, w_ResultSrc, w_MemWrite, w_Branch, clk_1hz;
 
 // Código do processador RiscV:
 //..

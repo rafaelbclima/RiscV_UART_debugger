@@ -101,6 +101,8 @@ Empacotamento do CONTROL (16 bits, MSB->LSB):
 <img width="543" height="244" alt="1" src="https://github.com/user-attachments/assets/5faabd33-b5bc-4144-96ea-0ea43a5e907a" />
 <img width="894" height="643" alt="2" src="https://github.com/user-attachments/assets/7a101082-cfdb-46d2-9b66-2e65747db88a" />
 
+- Caso ao rodar o DebugMonitor.exe apareça o seguinte erro: "Erro ao abrir porta serial COM3: could not open port 'COM3': OSError(22, 'Foi especificado um dispositivo inexistente.', None, 433)" Isso significa que provavelmente você está usando um conversor UART-USB PL2303HXA e precisa fazer um downgrade do driver. Instale o driver antigo "PL2303_Prolific_GPS_1013_20090319.exe" (já incluso aqui nesse projeto) e o problema será solucionado. Mas detalhes em: https://github.com/rubengr/PL2303HXA-Phased-Out
+
 ----------------------------------------------------------------------------------
 -- Para modificar o código do PC                                                --
 ----------------------------------------------------------------------------------
@@ -123,7 +125,7 @@ Empacotamento do CONTROL (16 bits, MSB->LSB):
 - Se certifique que o windows defender não bloqueou o .exe
 
 ----------------------------------------------------------------------------------
--- Para utilizar a interface do LCD da placa Altera DE2                                               --
+-- Para utilizar a interface do LCD da placa Altera DE2                         --
 ----------------------------------------------------------------------------------
 - instancie o módulo LCD_6x2.sv
 - Exemplo no quartus II

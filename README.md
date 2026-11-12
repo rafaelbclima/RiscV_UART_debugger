@@ -101,7 +101,17 @@ Empacotamento do CONTROL (16 bits, MSB->LSB):
 <img width="543" height="244" alt="1" src="https://github.com/user-attachments/assets/5faabd33-b5bc-4144-96ea-0ea43a5e907a" />
 <img width="894" height="643" alt="2" src="https://github.com/user-attachments/assets/7a101082-cfdb-46d2-9b66-2e65747db88a" />
 
-- Caso ao rodar o DebugMonitor.exe apareça o seguinte erro: "Erro ao abrir porta serial COM3: could not open port 'COM3': OSError(22, 'Foi especificado um dispositivo inexistente.', None, 433)" Isso significa que provavelmente você está usando um conversor UART-USB PL2303HXA e precisa fazer um downgrade do driver. Instale o driver antigo "PL2303_Prolific_GPS_1013_20090319.exe" (já incluso aqui nesse projeto) e o problema será solucionado. Mas detalhes em: https://github.com/rubengr/PL2303HXA-Phased-Out
+- Caso ao rodar o DebugMonitor.exe apareça o seguinte erro: "Erro ao abrir porta serial COM3: could not open port 'COM3': OSError(22, 'Foi especificado um dispositivo inexistente.', None, 433)" Isso significa que provavelmente você está usando um conversor UART-USB PL2303HXA e precisa fazer um downgrade do driver. Abra o gerenciador de dispositivos > Portas (COM e LPT) > desdesinstale o dispositivoUART-USB > Instale o driver antigo "PL2303_Prolific_GPS_1013_20090319.exe" (já incluso aqui nesse projeto) e o problema será solucionado. Mas detalhes em: https://github.com/rubengr/PL2303HXA-Phased-Out
+
+- Caso o windows fique atualizando automaticamente o driver do dispositivo para a versão errada, instale o driver certo conforme o passo anterior e congele as atualizações desse dispositivo conforme o seguinte procedimento:
+	- Abra o Gerenciador de Dispositivos (devmgmt.msc).
+	- Encontre o periférico em Portas (COM e LPT), clique com o botão direito nele e vá em Propriedades.
+	- Vá na aba Detalhes e, no menu suspensos "Propriedade", selecione ID de Hardware.
+	- Copie uma das linhas de identificação exibidas.
+	- Pressione Win + R, digite gpedit.msc e navegue até: Configuração do Computador > Modelos Administrativos > Sistema > Instalação de Dispositivos > Restrições de Instalação de Dispositivos.
+	- Dê dois cliques em "Impedir a instalação de dispositivos que correspondam a qualquer uma destas IDs de instância de dispositivo".
+	- Marque como Habilitado e clique no botão Mostrar....
+	- Cole a ID de hardware copiada anteriormente, clique em OK e depois em Aplicar
 
 ----------------------------------------------------------------------------------
 -- Para modificar o código do PC                                                --
